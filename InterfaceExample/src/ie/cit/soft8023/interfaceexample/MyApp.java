@@ -9,7 +9,7 @@ import ie.cit.soft8023.interfaceexample.service.TaxServiceImpl;
 public class MyApp {
 
 	private static void JdbcVersion() {
-		TaxDao taxDao = new JdbcTaxDao();
+		TaxDao taxDao = JdbcTaxDao.getInstance();
 		TaxService taxService = new TaxServiceImpl(taxDao);
 
 		// Calculate tax for salary of 16,500
@@ -21,7 +21,7 @@ public class MyApp {
 
 	
 	private static void MongoVersion() {
-		TaxDao taxDao = new MongoTaxDao();
+		TaxDao taxDao = MongoTaxDao.INSTANCE;
 		TaxService taxService = new TaxServiceImpl(taxDao);
 
 		// Calculate tax for salary of 16,500
