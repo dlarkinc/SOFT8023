@@ -2,8 +2,14 @@ package ie.cit.soft8023.interfaceexample.dao;
 
 import ie.cit.soft8023.interfaceexample.domain.Tax;
 
-public class MongoTaxDao implements TaxDao {
+public enum MongoTaxDao implements TaxDao {
 
+	INSTANCE;
+
+	MongoTaxDao() {
+		// Could initialize something here, e.g. connection to database
+	}
+	
 	@Override
 	public Tax getTax() {
 		// We are pretending here to use a MongoDB Java library to get the tax document
@@ -13,7 +19,6 @@ public class MongoTaxDao implements TaxDao {
 
 	@Override
 	public void updateTax(Tax tax) {
-		// This would execute an UPDATE SQL statement
+		// This would execute a Mongo UPDATE command
 	}
-
 }
