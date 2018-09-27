@@ -3,6 +3,8 @@ package ie.cit.soft8023.interfaceexample;
 import ie.cit.soft8023.interfaceexample.dao.JdbcTaxDao;
 import ie.cit.soft8023.interfaceexample.dao.MongoTaxDao;
 import ie.cit.soft8023.interfaceexample.dao.TaxDao;
+import ie.cit.soft8023.interfaceexample.logger.Logger;
+import ie.cit.soft8023.interfaceexample.logger.LoggerFactory;
 import ie.cit.soft8023.interfaceexample.service.TaxService;
 import ie.cit.soft8023.interfaceexample.service.TaxServiceImpl;
 
@@ -32,9 +34,20 @@ public class MyApp {
 	}
 	
 	public static void main(String[] args) {
-
+		
 		JdbcVersion();
 		MongoVersion();
+		
+		try {
+			Logger logger = LoggerFactory.getFactory("ie.cit.soft8023.interfaceexample.logger.ConsoleLoggerFactory").getLogger();
+			logger.debug("This is my debug message");
+			Logger logger2 = LoggerFactory.getFactory("ie.cit.soft8023.interfaceexample.logger.FileLoggerFactory").getLogger();
+			logger2.error("This is my error message");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 			
 	}
 
