@@ -1,4 +1,4 @@
-package ie.cit.soft8023.interfaceexample.thread;
+package ie.cit.soft8023.interfaceexample.thread.simplerunnable;
 
 import java.util.Random;
 
@@ -20,6 +20,7 @@ public class PrintTask implements Runnable
    } // end PrintTask constructor
 
    // method run contains the code that a thread will execute
+   @Override
    public void run()
    {
       try // put thread to sleep for sleepTime amount of time 

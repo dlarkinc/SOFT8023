@@ -1,4 +1,4 @@
-package ie.cit.soft8023.interfaceexample.thread;
+package ie.cit.soft8023.interfaceexample.thread.simplerunnable;
 
 import java.lang.Thread;
 
